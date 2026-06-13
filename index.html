@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma Surpresa Para Você ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:white;
+    overflow-x:hidden;
+}
+
+.tela-inicial{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.tela-inicial h1{
+    font-size:3rem;
+    margin-bottom:20px;
+    animation:pulsar 2s infinite;
+}
+
+.botao{
+    padding:15px 35px;
+    background:#ff4d94;
+    border:none;
+    color:white;
+    font-size:1.2rem;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.botao:hover{
+    transform:scale(1.05);
+}
+
+.conteudo{
+    display:none;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.foto{
+    width:90%;
+    max-width:500px;
+    border-radius:25px;
+    margin:30px auto;
+    display:block;
+    box-shadow:0 0 30px rgba(255,255,255,.3);
+}
+
+.titulo{
+    font-size:3rem;
+    color:#ff7ab8;
+}
+
+.mensagem{
+    max-width:800px;
+    margin:auto;
+    font-size:1.3rem;
+    line-height:2;
+}
+
+.assinatura{
+    margin-top:30px;
+    font-size:1.5rem;
+    color:#ffb3d9;
+}
+
+.coracao{
+    position:fixed;
+    top:-20px;
+    color:#ff69b4;
+    animation:cair linear forwards;
+    pointer-events:none;
+}
+
+@keyframes cair{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+@keyframes pulsar{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+</style>
+</head>
+<body>
+
+<section class="tela-inicial">
+
+<h1>🎁 Tenho uma surpresa para você...</h1>
+
+<p style="margin-bottom:30px;">
+Clique no botão abaixo ❤️
+</p>
+
+<button class="botao" onclick="mostrarSurpresa()">
+Abrir Surpresa
+</button>
+
+</section>
+
+<section class="conteudo" id="surpresa">
+
+<h1 class="titulo">🎉 Feliz Aniversário! 🎂</h1>
+
+<img src="foto-aniversario.jpg" class="foto">
+
+<div class="mensagem">
+
+<p>
+Hoje é um dia muito especial...
+</p>
+
+<br>
+
+<p>
+Quero te desejar um aniversário repleto de felicidade, amor, saúde e muitas conquistas.
+</p>
+
+<br>
+
+<p>
+Que cada sorriso seu seja multiplicado, que todos os seus sonhos encontrem o caminho para se tornarem realidade e que nunca faltem motivos para acreditar em dias ainda melhores.
+</p>
+
+<br>
+
+<p>
+Obrigado por todos os momentos, pelas risadas, pelas lembranças e por ser uma pessoa tão incrível.
+</p>
+
+<br>
+
+<p>
+Aproveite muito o seu dia 13, porque ele é só seu! ❤️
+</p>
+
+<div class="assinatura">
+Com todo meu carinho ❤️
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function mostrarSurpresa(){
+
+document.querySelector(".tela-inicial").style.display="none";
+document.getElementById("surpresa").style.display="block";
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.classList.add("coracao");
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+},300);
+
+}
+
+</script>
+
+</body>
+</html>
